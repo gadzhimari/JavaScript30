@@ -6,7 +6,7 @@ function init() {
   let secondsHand = document.querySelector('.second-hand');
 
   const initialAngle = 90;
-  
+
   let date = new Date();
   let hours = date.getHours();
   let minutes = date.getMinutes();
@@ -33,14 +33,18 @@ function init() {
     secondsHand.style.transform = `rotate(${deg}deg)`;
 
     if (seconds == 0) {
+      secondsHand.classList.add('notransition');
       deg = initialAngle + minutes * 6;
       minutesHand.style.transform = `rotate(${deg}deg)`;
+    } else {
+      secondsHand.classList.remove('notransition');
     }
     if (minutes == 0) {
+      minutesHand.classList.add('notransition');
       deg = initialAngle + hours * 30;
       hoursHand.style.transform = `rotate(${deg}deg)`;
+    } else {
+      minutesHand.classList.remove('notransition');
     }
-
-
   }
 }
