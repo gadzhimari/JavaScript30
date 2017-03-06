@@ -45,10 +45,24 @@
     input {
       width:100px;
     }
+
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+
+    .hl {
+      color: var(--base);
+    }
+
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+    }
   </style>
 
-  <script>
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
